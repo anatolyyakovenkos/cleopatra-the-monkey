@@ -3,317 +3,735 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Punch's Reunited With His Birth Mother Cleopatra!</title>
+    <title>Punch's Reunited With His Birth Mother Cleopatra! - Japan Travel</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <meta name="description" content="Punch the Monkey is reunited with his birth mother Cleopatra! The heartwarming story of the baby macaque at Ichikawa City Zoo, Japan.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; color: #333; background: #fff; line-height: 1.7; font-size: 15px; }
+        a { color: #c0392b; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        img { max-width: 100%; height: auto; }
 
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            color: #1a1a1a;
-            background: #faf9f6;
-            line-height: 1.8;
+        /* ===== TOP NAV ===== */
+        .topnav {
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky; top: 0; z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
         }
+        .topnav-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 20px; height: 60px;
+        }
+        .topnav-logo svg { height: 32px; }
+        .topnav-links { display: flex; gap: 24px; list-style: none; font-size: 14px; font-weight: 600; }
+        .topnav-links a { color: #333; }
+        .topnav-links a:hover { color: #c0392b; text-decoration: none; }
+        .topnav-right { display: flex; align-items: center; gap: 16px; font-size: 14px; }
+        .topnav-right .btn-signin { background: #c0392b; color: #fff; border: none; padding: 6px 18px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; }
+        .topnav-right .btn-signin:hover { background: #a93226; }
+        .topnav-search { color: #666; cursor: pointer; font-size: 16px; }
 
-        header {
+        /* ===== HERO COVER ===== */
+        .bigcover {
             position: relative;
-            height: 80vh;
-            min-height: 500px;
+            height: 500px;
             overflow: hidden;
+            background: #111;
         }
-
-        header img {
-            width: 100%;
-            height: 100%;
+        .bigcover img {
+            width: 100%; height: 100%;
             object-fit: cover;
         }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.3) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 3rem 2rem;
+        .bigcover .photo-credit {
+            position: absolute; bottom: 8px; right: 12px;
+            color: rgba(255,255,255,0.6); font-size: 11px;
         }
 
-        .hero-overlay h1 {
-            font-family: 'Georgia', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            color: #fff;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-weight: 700;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+        /* ===== BREADCRUMBS ===== */
+        .breadcrumbs {
+            max-width: 1200px; margin: 0 auto;
+            padding: 12px 20px;
+            font-size: 12px; color: #999;
         }
+        .breadcrumbs a { color: #999; }
+        .breadcrumbs a:hover { color: #c0392b; }
+        .breadcrumbs span { margin: 0 6px; }
 
-        .hero-overlay .subtitle {
-            color: rgba(255,255,255,0.85);
-            font-size: 1.15rem;
-            text-align: center;
-            max-width: 600px;
-            margin: 0.75rem auto 0;
+        /* ===== MAIN LAYOUT ===== */
+        .main-container {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; gap: 40px;
+            padding: 0 20px 60px;
+        }
+        .article-col { flex: 1; min-width: 0; }
+        .sidebar-col { width: 340px; flex-shrink: 0; }
+
+        /* ===== ARTICLE ===== */
+        .article-meta {
+            padding: 16px 0 8px;
+            font-size: 13px; color: #999;
+        }
+        .article-meta time { color: #666; }
+        .article-title {
+            font-size: 28px; font-weight: 700; color: #111;
+            margin: 0 0 6px; line-height: 1.3;
+        }
+        .article-subtitle {
+            font-size: 16px; color: #666; margin-bottom: 20px;
             font-style: italic;
         }
 
-        .hero-credit {
-            position: absolute;
-            bottom: 0.75rem;
-            right: 1rem;
-            color: rgba(255,255,255,0.6);
-            font-size: 0.75rem;
+        /* Author byline */
+        .byline {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 0 24px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 24px;
+        }
+        .byline-avatar {
+            width: 42px; height: 42px; border-radius: 50%;
+            object-fit: cover;
+        }
+        .byline-name { font-weight: 600; font-size: 14px; color: #111; }
+        .byline-role { font-size: 12px; color: #999; }
+
+        .article-content p {
+            margin-bottom: 20px; font-size: 15px; line-height: 1.8; color: #333;
+        }
+        .article-content h2 {
+            font-size: 22px; font-weight: 700; color: #111;
+            margin: 32px 0 12px; line-height: 1.3;
+        }
+        .article-content h3 {
+            font-size: 18px; font-weight: 600; color: #222;
+            margin: 24px 0 8px;
+        }
+        .article-content figure {
+            margin: 24px 0;
+        }
+        .article-content figure img {
+            width: 100%; display: block; border-radius: 4px;
+        }
+        .article-content figcaption {
+            font-size: 12px; color: #999; padding: 6px 0; font-style: italic;
+        }
+        .article-content .video-embed {
+            position: relative; padding-bottom: 56.25%; height: 0;
+            margin: 24px 0; border-radius: 4px; overflow: hidden;
+        }
+        .article-content .video-embed iframe {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; border: none;
         }
 
-        .meta-bar {
-            max-width: 740px;
-            margin: 0 auto;
-            padding: 1.5rem 1.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 0.9rem;
-            color: #666;
+        /* Social bar */
+        .article-social {
+            display: flex; align-items: center; justify-content: space-between;
+            border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+            padding: 12px 0; margin: 32px 0;
         }
-
-        .meta-bar .dot { color: #ccc; }
-
-        article {
-            max-width: 740px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem 4rem;
+        .social-btn {
+            background: none; border: none; cursor: pointer;
+            color: #999; font-size: 14px; display: flex; align-items: center; gap: 6px;
         }
+        .social-btn:hover { color: #c0392b; }
+        .social-btn i { font-size: 16px; }
+        .social-left, .social-right { display: flex; gap: 16px; }
 
-        article p {
-            font-size: 1.125rem;
-            margin-bottom: 1.5rem;
-            color: #2a2a2a;
-        }
-
-        article h2 {
-            font-size: 1.75rem;
-            margin: 2.5rem 0 1rem;
-            color: #111;
-            font-weight: 700;
-        }
-
-        article h3 {
-            font-size: 1.3rem;
-            margin: 2rem 0 0.75rem;
-            color: #222;
-            font-weight: 600;
-        }
-
-        figure {
-            margin: 2rem -1.5rem;
-            position: relative;
-        }
-
-        figure img {
-            width: 100%;
-            display: block;
-            border-radius: 0;
-        }
-
-        figcaption {
-            padding: 0.6rem 1.5rem;
-            font-size: 0.85rem;
-            color: #777;
-            font-style: italic;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-
-        .video-embed {
-            margin: 2rem 0;
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-
-        .video-embed iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
+        /* FAQ section */
         .faq-section {
-            background: #f0eeea;
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2.5rem 0;
+            background: #f8f8f8; border-radius: 6px;
+            padding: 24px; margin: 32px 0;
+        }
+        .faq-section h2 { margin-top: 0; }
+        .faq-section h3 { margin-top: 16px; }
+        .faq-section h3:first-of-type { margin-top: 12px; }
+
+        /* Feedback bar */
+        .article-feedback {
+            background: #fafafa; border: 1px solid #eee; border-radius: 6px;
+            padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;
+            margin: 24px 0;
+        }
+        .feedback-title { font-weight: 600; font-size: 14px; }
+        .feedback-sub { font-size: 12px; color: #999; }
+        .feedback-btn {
+            background: #c0392b; color: #fff; border: none; padding: 8px 20px;
+            border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600;
         }
 
-        .faq-section h2 {
-            margin-top: 0;
+        /* Author box */
+        .author-box {
+            display: flex; align-items: center; gap: 16px;
+            padding: 24px 0; border-top: 1px solid #eee;
+        }
+        .author-box-avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
+        .author-box-name { font-weight: 700; font-size: 15px; }
+        .author-box-role { font-size: 13px; color: #999; }
+        .btn-follow {
+            margin-left: auto;
+            background: none; border: 1px solid #c0392b; color: #c0392b;
+            padding: 6px 16px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600;
         }
 
-        .faq-section h3 {
-            margin-top: 1.5rem;
+        /* ===== SIDEBAR ===== */
+        .sidebar-section { margin-bottom: 28px; }
+        .sidebar-section h3 {
+            font-size: 15px; font-weight: 700; color: #333;
+            margin-bottom: 12px; padding-bottom: 8px;
+            border-bottom: 2px solid #c0392b;
         }
 
-        .faq-section h3:first-of-type {
-            margin-top: 1rem;
+        /* Photo gallery */
+        .photo-gallery {
+            display: grid; grid-template-columns: 1fr 1fr 1fr;
+            gap: 4px;
         }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 0.85rem;
-            color: #999;
-            border-top: 1px solid #e8e6e1;
-            max-width: 740px;
-            margin: 0 auto;
+        .photo-gallery img {
+            width: 100%; height: 70px; object-fit: cover;
+            border-radius: 2px; cursor: pointer;
         }
+        .photo-gallery img:hover { opacity: 0.8; }
 
-        @media (max-width: 600px) {
-            header { height: 60vh; min-height: 350px; }
-            figure { margin: 1.5rem -1rem; }
-            figcaption { padding: 0.5rem 1rem; }
-            article { padding: 1.5rem 1rem 3rem; }
-            .faq-section { padding: 1.5rem 1rem; }
+        /* Info box */
+        .info-box {
+            background: #f9f9f9; border: 1px solid #eee; border-radius: 6px;
+            padding: 16px;
+        }
+        .info-box .info-map {
+            width: 100%; height: 180px; background: #ddd;
+            border-radius: 4px; margin-bottom: 12px; overflow: hidden;
+        }
+        .info-box .info-map iframe { width: 100%; height: 100%; border: none; }
+        .info-item {
+            display: flex; align-items: flex-start; gap: 10px;
+            padding: 8px 0; border-top: 1px solid #eee;
+            font-size: 13px; color: #555;
+        }
+        .info-item i { color: #c0392b; width: 18px; text-align: center; margin-top: 2px; }
+
+        /* Nearby / Top articles */
+        .nearby-list, .top-list { list-style: none; }
+        .nearby-item, .top-item {
+            display: flex; gap: 12px; padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .nearby-item:last-child, .top-item:last-child { border-bottom: none; }
+        .nearby-thumb, .top-thumb {
+            width: 80px; height: 54px; object-fit: cover;
+            border-radius: 3px; flex-shrink: 0;
+        }
+        .nearby-title, .top-title {
+            font-size: 13px; font-weight: 600; color: #333; line-height: 1.4;
+        }
+        .nearby-author, .top-desc {
+            font-size: 11px; color: #999; margin-top: 2px;
+        }
+        .top-rank {
+            width: 22px; height: 22px; background: #c0392b; color: #fff;
+            border-radius: 50%; font-size: 11px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; margin-top: 2px;
+        }
+        .discover-btn {
+            display: block; text-align: center; margin-top: 12px;
+            padding: 8px; border: 1px solid #c0392b; color: #c0392b;
+            border-radius: 4px; font-size: 13px; font-weight: 600;
+        }
+        .discover-btn:hover { background: #c0392b; color: #fff; text-decoration: none; }
+
+        /* ===== RELATED ARTICLES ===== */
+        .related-section { margin-top: 40px; }
+        .related-section h3 {
+            font-size: 18px; font-weight: 700; margin-bottom: 16px;
+            padding-bottom: 8px; border-bottom: 2px solid #c0392b;
+        }
+        .related-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+        }
+        .related-card { }
+        .related-card img { width: 100%; height: 140px; object-fit: cover; border-radius: 4px; }
+        .related-card-title { font-size: 14px; font-weight: 600; margin-top: 8px; color: #111; }
+        .related-card-author { font-size: 12px; color: #999; margin-top: 2px; }
+
+        /* ===== COMMENTS ===== */
+        .comments-section {
+            margin-top: 40px; padding-top: 24px;
+            border-top: 1px solid #eee;
+        }
+        .comments-section h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+        .comment-form textarea {
+            width: 100%; border: 1px solid #ddd; border-radius: 4px;
+            padding: 12px; font-family: inherit; font-size: 14px;
+            resize: vertical; min-height: 80px;
+        }
+        .comment-form textarea:focus { outline: none; border-color: #c0392b; }
+        .comment-submit {
+            margin-top: 8px; float: right;
+            background: #c0392b; color: #fff; border: none;
+            padding: 8px 24px; border-radius: 4px; cursor: pointer;
+            font-size: 13px; font-weight: 600;
+        }
+        .comment-submit:hover { background: #a93226; }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: #222; color: #aaa; margin-top: 60px;
+        }
+        .footer-inner {
+            max-width: 1200px; margin: 0 auto;
+            padding: 40px 20px 24px;
+            display: flex; gap: 40px; flex-wrap: wrap;
+        }
+        .footer-col { flex: 1; min-width: 200px; }
+        .footer-col h4 { color: #fff; font-size: 14px; margin-bottom: 12px; font-weight: 700; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 6px; }
+        .footer-col a { color: #aaa; font-size: 13px; }
+        .footer-col a:hover { color: #fff; text-decoration: none; }
+        .footer-bottom {
+            max-width: 1200px; margin: 0 auto;
+            padding: 16px 20px;
+            border-top: 1px solid #333;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 12px;
+        }
+        .footer-social { display: flex; gap: 12px; }
+        .footer-social a { color: #aaa; font-size: 16px; }
+        .footer-social a:hover { color: #fff; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .main-container { flex-direction: column; }
+            .sidebar-col { width: 100%; }
+            .topnav-links { display: none; }
+            .bigcover { height: 300px; }
+            .related-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <img src="/chiba/punch-the-monkey-japan/72404/images/hero.jpg" alt="Punch the Monkey reunited with his mother Cleopatra">
-    <div class="hero-overlay">
-        <h1>Punch's Reunited With His Birth Mother Cleopatra!</h1>
-        <p class="subtitle">The internet's favorite baby macaque finally gets his happy ending</p>
+<!-- TOP NAV -->
+<nav class="topnav">
+    <div class="topnav-inner">
+        <a href="/" class="topnav-logo">
+            <svg viewBox="0 0 200 40" height="32" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="20" r="14" fill="#c0392b"/>
+                <text x="40" y="27" font-family="'Open Sans',sans-serif" font-weight="700" font-size="18" fill="#333">Japan Travel</text>
+            </svg>
+        </a>
+        <ul class="topnav-links">
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Interests</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Plan a trip</a></li>
+            <li><a href="#">Our Travel Agency</a></li>
+        </ul>
+        <div class="topnav-right">
+            <span class="topnav-search"><i class="fas fa-search"></i></span>
+            <button class="btn-signin">Sign In</button>
+        </div>
     </div>
-    <span class="hero-credit">Photo: Sana Muhy Ud Din / Shutterstock.com</span>
-</header>
+</nav>
 
-<div class="meta-bar">
-    <span>Apr 10, 2026</span>
-    <span class="dot">&middot;</span>
-    <span>6 min read</span>
+<!-- HERO COVER -->
+<div class="bigcover">
+    <img src="/chiba/punch-the-monkey-japan/72404/images/hero.jpg" alt="Punch the Monkey reunited with his mother Cleopatra">
+    <span class="photo-credit">Punch the Monkey (Photo: Sana Muhy Ud Din / Shutterstock.com)</span>
 </div>
 
-<article>
-    <p>The story that broke millions of hearts now has the ending everyone was hoping for. Punch&mdash;the baby macaque at Ichikawa City Zoo who went viral for clinging to a stuffed orangutan after being rejected by his mother&mdash;has been reunited with his birth mother, Cleopatra.</p>
+<!-- BREADCRUMBS -->
+<div class="breadcrumbs">
+    <a href="#">Japan</a> <span>&rsaquo;</span>
+    <a href="#">Kanto</a> <span>&rsaquo;</span>
+    <a href="#">Chiba</a> <span>&rsaquo;</span>
+    <a href="#">Activities</a> <span>&rsaquo;</span>
+    <span style="color:#666">Punch's Reunited With His Birth Mother Cleopatra!</span>
+</div>
 
-    <p>Zoo staff confirmed that Cleopatra, who had abandoned Punch shortly after his birth in 2025, has begun accepting him back into her care. The reunion has been gradual and carefully managed by keepers, but the signs are unmistakable: Cleopatra has been seen grooming Punch, allowing him to cling to her back, and even sleeping beside him.</p>
+<!-- MAIN CONTENT -->
+<div class="main-container">
 
-    <p>It's the happy ending nobody dared to expect&mdash;and the internet is losing it all over again.</p>
+    <!-- ARTICLE COLUMN -->
+    <div class="article-col">
+        <div class="article-meta">
+            <time datetime="2026-04-10">Apr 10, 2026</time> &mdash; 6 min read
+        </div>
+        <h1 class="article-title">Punch's Reunited With His Birth Mother Cleopatra!</h1>
+        <p class="article-subtitle">The internet's favorite baby macaque finally gets his happy ending</p>
 
-    <h2>The backstory: How Punch became the world's most famous monkey</h2>
+        <div class="byline">
+            <img class="byline-avatar" src="https://ui-avatars.com/api/?name=Ryan+Noble&background=c0392b&color=fff&size=84" alt="Ryan Noble">
+            <div>
+                <div class="byline-name">Ryan Noble</div>
+                <div class="byline-role">Japan Travel Staff</div>
+            </div>
+        </div>
 
-    <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/n1CemDBjVbs" title="Punch the Monkey | The Lonely Baby Monkey Who Found a Mom in a Stuffed Toy" allowfullscreen></iframe>
+        <div class="article-content">
+            <p>The story that broke millions of hearts now has the ending everyone was hoping for. Punch&mdash;the baby macaque at Ichikawa City Zoo who went viral for clinging to a stuffed orangutan after being rejected by his mother&mdash;has been reunited with his birth mother, Cleopatra.</p>
+
+            <p>Zoo staff confirmed that Cleopatra, who had abandoned Punch shortly after his birth in 2025, has begun accepting him back into her care. The reunion has been gradual and carefully managed by keepers, but the signs are unmistakable: Cleopatra has been seen grooming Punch, allowing him to cling to her back, and even sleeping beside him.</p>
+
+            <p>It's the happy ending nobody dared to expect&mdash;and the internet is losing it all over again.</p>
+
+            <h2>The backstory: How Punch became the world's most famous monkey</h2>
+
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/n1CemDBjVbs" title="Punch the Monkey | The Lonely Baby Monkey Who Found a Mom in a Stuffed Toy" allowfullscreen></iframe>
+            </div>
+
+            <p>For those just catching up: Punch is a baby Japanese macaque born at Ichikawa City Zoo, a small municipal zoo just east of Tokyo in Chiba Prefecture. Shortly after birth, his mother Cleopatra rejected him&mdash;refusing to nurse or carry him&mdash;and zookeepers were forced to step in and hand-raise the tiny monkey.</p>
+
+            <p>Without a mother, Punch struggled to fit in with the troop. Videos showed older macaques pushing him away, ignoring him, and leaving him alone. In response, keepers gave him a stuffed orangutan toy for comfort&mdash;and Punch latched onto it like a lifeline.</p>
+
+            <p>Clips of the little monkey hugging, grooming, and carrying his plush companion everywhere went massively viral, sparking global conversations about animal emotions and resilience. Punch became an internet sensation overnight.</p>
+
+            <h2>Why did Cleopatra abandon Punch?</h2>
+
+            <figure>
+                <img src="/chiba/punch-the-monkey-japan/72404/images/looking-back.jpg" alt="Punch looking back at his stuffed toy">
+                <figcaption>Punch with his stuffed orangutan companion (Photo: Daiei Onoguchi / CC BY-SA 4.0)</figcaption>
+            </figure>
+
+            <p>Cleopatra was a first-time mother when Punch was born during an intense summer heatwave. Zookeepers believe the combination of inexperience and heat stress caused her to reject her newborn&mdash;a behavior that, while heartbreaking, is not uncommon among captive primates.</p>
+
+            <p>The social dynamics within the troop also played a role. Competition and hierarchy among macaques can make it harder for inexperienced mothers to bond with their young, especially under stressful environmental conditions.</p>
+
+            <p>But Cleopatra never left the troop. She remained at the zoo, living among the same group of macaques&mdash;and as months passed, keepers began noticing something: she was watching Punch.</p>
+
+            <h2>The reunion: How it happened</h2>
+
+            <figure>
+                <img src="/chiba/punch-the-monkey-japan/72404/images/sitting-on-toy.jpg" alt="Punch sitting near his mother Cleopatra">
+                <figcaption>Punch at Ichikawa City Zoo (Photo: Daiei Onoguchi / CC BY-SA 4.0)</figcaption>
+            </figure>
+
+            <p>The reunion didn't happen overnight. Zoo staff began noticing Cleopatra showing increasing interest in Punch as he grew older and more independent. She would sit near him during feeding times, and on several occasions was spotted reaching out to touch him briefly before pulling away.</p>
+
+            <p>Keepers took a cautious approach, allowing the pair to interact naturally without forcing contact. Over the course of several weeks, Cleopatra's behavior shifted dramatically. She began grooming Punch&mdash;a key bonding behavior among macaques&mdash;and eventually allowed him to cling to her fur, something she had refused when he was a newborn.</p>
+
+            <p>The breakthrough moment came when Punch was observed sleeping curled up against Cleopatra, his stuffed orangutan toy still tucked under one arm. Staff described the scene as one of the most moving things they had ever witnessed at the zoo.</p>
+
+            <h2>What the experts say</h2>
+
+            <p>Animal behavior experts say that delayed maternal bonding, while rare, is not unheard of in primates. Stress, inexperience, and environmental factors can temporarily disrupt a mother's instincts, but the underlying bond can sometimes re-emerge once conditions improve.</p>
+
+            <p>In Punch's case, his growing confidence&mdash;partly thanks to the stuffed toy and the care of his keepers&mdash;may have made him less demanding and more approachable to Cleopatra. As he learned social cues from other macaques in the troop, he also became better at reading his mother's signals.</p>
+
+            <p>Experts caution that the relationship is still developing and may look different from a typical mother-infant bond, but the signs are overwhelmingly positive.</p>
+
+            <h2>What about the stuffed orangutan?</h2>
+
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/2JA2C9CbDAA" title="Punch the monkey making friends, zoo reports" allowfullscreen></iframe>
+            </div>
+
+            <p>Punch hasn't completely let go of his famous plush companion. While he now spends most of his time with Cleopatra and the troop, keepers say he still picks up the stuffed orangutan from time to time&mdash;especially during moments of stress or when the troop gets particularly active.</p>
+
+            <p>It's become a symbol of his journey: from rejected newborn clinging to a toy for comfort, to a confident young macaque reunited with the mother who left him behind.</p>
+
+            <h2>Where to see Punch and Cleopatra</h2>
+
+            <figure>
+                <img src="/chiba/punch-the-monkey-japan/72404/images/monkey-mountain.jpg" alt="Monkey Mountain at Ichikawa City Zoo">
+                <figcaption>Monkey Mountain at Ichikawa City Zoo (Photo: ike-yama / Shutterstock.com)</figcaption>
+            </figure>
+
+            <p>Punch and Cleopatra live at Ichikawa City Zoo, located in Ichikawa City in Chiba Prefecture, just across the Edo River from Tokyo. The zoo is a small community zoo known for its family-friendly atmosphere and for housing animals native to Japan, including Japanese macaques, red pandas, and various birds and small mammals.</p>
+
+            <p>From Tokyo, visitors can reach Ichikawa by local JR train lines in about 30&ndash;40 minutes. From the nearest station, buses or taxis provide access to the zoo.</p>
+
+            <h2>A story that came full circle</h2>
+
+            <figure>
+                <img src="/chiba/punch-the-monkey-japan/72404/images/cuddling-toy.jpg" alt="Punch cuddling his orangutan toy">
+                <figcaption>Punch with his beloved orangutan toy (Photo: Daiei Onoguchi / CC BY-SA 4.0)</figcaption>
+            </figure>
+
+            <p>Punch's story captivated the world because it touched something deeply human&mdash;the need for comfort, the pain of rejection, and the hope that things can get better. His reunion with Cleopatra is proof that sometimes, even in the animal kingdom, second chances happen.</p>
+
+            <p>Whether you followed Punch from the beginning or you're just hearing about him now, one thing is clear: the little monkey with the stuffed orangutan got his happy ending.</p>
+
+            <figure>
+                <img src="/chiba/punch-the-monkey-japan/72404/images/macaque-bridge.jpg" alt="Macaque at the zoo">
+                <figcaption>A macaque at Ichikawa City Zoo (Photo: Tan Yong Lin / Shutterstock.com)</figcaption>
+            </figure>
+
+            <div class="faq-section">
+                <h2>FAQs</h2>
+
+                <h3>Is Punch really back with his mother?</h3>
+                <p>Yes. Ichikawa City Zoo staff have confirmed that Punch's birth mother, Cleopatra, has begun accepting him back. She has been observed grooming him, letting him cling to her, and sleeping beside him.</p>
+
+                <h3>Who is Cleopatra?</h3>
+                <p>Cleopatra is Punch's birth mother, a Japanese macaque at Ichikawa City Zoo. She rejected Punch shortly after his birth in 2025, likely due to heat stress and first-time motherhood, but has since reconnected with him.</p>
+
+                <h3>Does Punch still carry his stuffed toy?</h3>
+                <p>Sometimes. While Punch now spends most of his time with Cleopatra and the troop, he still picks up his famous stuffed orangutan during moments of stress or high activity.</p>
+
+                <h3>How old is Punch?</h3>
+                <p>Punch was born in 2025, making him about seven to eight months old. He is a Japanese macaque, also known as a snow monkey.</p>
+
+                <h3>Can I visit Punch and Cleopatra?</h3>
+                <p>Yes. Ichikawa City Zoo is open to visitors. The zoo is located in Chiba Prefecture, about 30&ndash;40 minutes from central Tokyo by JR train. Animal viewing depends on weather and the zoo's daily schedule.</p>
+
+                <h3>Why did Cleopatra reject Punch in the first place?</h3>
+                <p>Zookeepers believe it was a combination of factors: Cleopatra was a first-time mother, Punch was born during an extreme heatwave, and the social dynamics of the captive troop added additional stress.</p>
+            </div>
+        </div>
+
+        <!-- SOCIAL BAR -->
+        <div class="article-social">
+            <div class="social-left">
+                <button class="social-btn"><i class="fas fa-heart"></i> 1</button>
+            </div>
+            <div class="social-right">
+                <button class="social-btn"><i class="fas fa-share-alt"></i> Share</button>
+                <button class="social-btn"><i class="fas fa-comment"></i> 0</button>
+                <button class="social-btn"><i class="fas fa-bookmark"></i></button>
+            </div>
+        </div>
+
+        <!-- FEEDBACK -->
+        <div class="article-feedback">
+            <div>
+                <div class="feedback-title">Was this article helpful?</div>
+                <div class="feedback-sub">Help us improve the site</div>
+            </div>
+            <button class="feedback-btn">Give Feedback</button>
+        </div>
+
+        <!-- AUTHOR BOX -->
+        <div class="author-box">
+            <img class="author-box-avatar" src="https://ui-avatars.com/api/?name=Ryan+Noble&background=c0392b&color=fff&size=112" alt="Ryan Noble">
+            <div>
+                <div class="author-box-name">Ryan Noble</div>
+                <div class="author-box-role">Japan Travel Staff</div>
+            </div>
+            <button class="btn-follow"><i class="fas fa-user-plus"></i> Follow</button>
+        </div>
+
+        <!-- RELATED ARTICLES -->
+        <div class="related-section">
+            <h3>More from this category</h3>
+            <div class="related-grid">
+                <a class="related-card" href="#">
+                    <img src="https://a1.cdn.japantravel.com/photo/72406-246824/420x280!/fukuoka-fukuoka-food-guide-yatai-culture-246824.jpg" alt="Fukuoka Food Guide">
+                    <div class="related-card-title">Ultimate Fukuoka Food Guide: Hakata Ramen, Yatai Culture & Beyond</div>
+                    <div class="related-card-author">By Ryan Noble</div>
+                </a>
+                <a class="related-card" href="#">
+                    <img src="https://a1.cdn.japantravel.com/photo/72357-246529/420x280!/tokyo-shopping-in-ginza-matsuya-ginza-246529.jpg" alt="Shopping in Ginza">
+                    <div class="related-card-title">Shopping in Ginza: 10 Unexpected Finds at Matsuya Ginza</div>
+                    <div class="related-card-author">By Japan Travel Staff</div>
+                </a>
+                <a class="related-card" href="#">
+                    <img src="https://a0.cdn.japantravel.com/photo/64866-219109/420x280!/chiba-21st-century-forest-and-park-219109.jpg" alt="21st Century Forest">
+                    <div class="related-card-title">21st Century Forest and Park</div>
+                    <div class="related-card-author">By Elizabeth S</div>
+                </a>
+                <a class="related-card" href="#">
+                    <img src="https://a3.cdn.japantravel.com/photo/70689-238435/420x280!/chiba-tokiwadaira-sakura-festival-238435.jpg" alt="Tokiwadaira Sakura">
+                    <div class="related-card-title">Tokiwadaira Sakura Festival</div>
+                    <div class="related-card-author">By Kim Bergstr&ouml;m</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- COMMENTS -->
+        <div class="comments-section">
+            <h3>Leave a comment</h3>
+            <form class="comment-form" onsubmit="return false;">
+                <textarea placeholder="Share your thoughts with us"></textarea>
+                <button class="comment-submit" type="submit">Submit</button>
+                <div style="clear:both"></div>
+            </form>
+        </div>
     </div>
 
-    <p>For those just catching up: Punch is a baby Japanese macaque born at Ichikawa City Zoo, a small municipal zoo just east of Tokyo in Chiba Prefecture. Shortly after birth, his mother Cleopatra rejected him&mdash;refusing to nurse or carry him&mdash;and zookeepers were forced to step in and hand-raise the tiny monkey.</p>
+    <!-- SIDEBAR -->
+    <div class="sidebar-col">
 
-    <p>Without a mother, Punch struggled to fit in with the troop. Videos showed older macaques pushing him away, ignoring him, and leaving him alone. In response, keepers gave him a stuffed orangutan toy for comfort&mdash;and Punch latched onto it like a lifeline.</p>
+        <!-- Photo Gallery -->
+        <div class="sidebar-section">
+            <div class="photo-gallery">
+                <img src="/chiba/punch-the-monkey-japan/72404/images/hero.jpg" alt="Punch the Monkey">
+                <img src="/chiba/punch-the-monkey-japan/72404/images/sitting-on-toy.jpg" alt="Punch sitting on toy">
+                <img src="/chiba/punch-the-monkey-japan/72404/images/looking-back.jpg" alt="Punch looking back">
+                <img src="/chiba/punch-the-monkey-japan/72404/images/monkey-mountain.jpg" alt="Monkey Mountain">
+                <img src="/chiba/punch-the-monkey-japan/72404/images/macaque-bridge.jpg" alt="Macaque on bridge">
+                <img src="/chiba/punch-the-monkey-japan/72404/images/cuddling-toy.jpg" alt="Punch cuddling toy">
+            </div>
+        </div>
 
-    <p>Clips of the little monkey hugging, grooming, and carrying his plush companion everywhere went massively viral, sparking global conversations about animal emotions and resilience. Punch became an internet sensation overnight.</p>
+        <!-- Info Box -->
+        <div class="sidebar-section">
+            <h3><i class="fas fa-location-arrow"></i> Information</h3>
+            <div class="info-box">
+                <div class="info-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.5!2d139.9619896!3d35.7691718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQ2JzA5LjAiTiAxMznCsDU3JzQzLjIiRQ!5e0!3m2!1sen!2sjp!4v1" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Ichikawa City Zoo, Omachi, Ichikawa, Chiba, 272-0801 (<a href="https://google.com/maps?daddr=35.7691718,139.9619896&dirflg=r" target="_blank">Directions</a>)</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>047-338-1960</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-globe"></i>
+                    <span><a href="http://www.city.ichikawa.lg.jp/zoo/index.html" target="_blank" rel="noopener">city.ichikawa.lg.jp</a></span>
+                </div>
+            </div>
+        </div>
 
-    <h2>Why did Cleopatra abandon Punch?</h2>
+        <!-- Explore Nearby -->
+        <div class="sidebar-section">
+            <h3>Explore nearby</h3>
+            <ul class="nearby-list">
+                <li class="nearby-item">
+                    <img class="nearby-thumb" src="https://a0.cdn.japantravel.com/photo/23783-130642/180x120!/chiba-japanese-pear-picking-in-chiba-130642.jpg" alt="Pear Picking">
+                    <div>
+                        <div class="nearby-title">Japanese Pear Picking in Chiba</div>
+                    </div>
+                </li>
+                <li class="nearby-item">
+                    <img class="nearby-thumb" src="https://a2.cdn.japantravel.com/photo/60900-208130/180x120!/chiba-showa-no-mori-museum-208130.jpg" alt="Showa Museum">
+                    <div>
+                        <div class="nearby-title">Showa no Mori Museum</div>
+                        <div class="nearby-author">By Elizabeth S</div>
+                    </div>
+                </li>
+                <li class="nearby-item">
+                    <img class="nearby-thumb" src="https://a3.cdn.japantravel.com/photo/70689-238435/180x120!/chiba-tokiwadaira-sakura-festival-238435.jpg" alt="Sakura Festival">
+                    <div>
+                        <div class="nearby-title">Tokiwadaira Sakura Festival</div>
+                        <div class="nearby-author">By Kim Bergstr&ouml;m</div>
+                    </div>
+                </li>
+                <li class="nearby-item">
+                    <img class="nearby-thumb" src="https://a0.cdn.japantravel.com/photo/64866-219109/180x120!/chiba-21st-century-forest-and-park-219109.jpg" alt="Forest Park">
+                    <div>
+                        <div class="nearby-title">21st Century Forest and Park</div>
+                        <div class="nearby-author">By Elizabeth S</div>
+                    </div>
+                </li>
+            </ul>
+            <a class="discover-btn" href="#">Discover Chiba</a>
+        </div>
 
-    <figure>
-        <img src="/chiba/punch-the-monkey-japan/72404/images/looking-back.jpg" alt="Punch looking back at his stuffed toy">
-        <figcaption>Punch with his stuffed orangutan companion (Photo: Daiei Onoguchi / CC BY-SA 4.0)</figcaption>
-    </figure>
-
-    <p>Cleopatra was a first-time mother when Punch was born during an intense summer heatwave. Zookeepers believe the combination of inexperience and heat stress caused her to reject her newborn&mdash;a behavior that, while heartbreaking, is not uncommon among captive primates.</p>
-
-    <p>The social dynamics within the troop also played a role. Competition and hierarchy among macaques can make it harder for inexperienced mothers to bond with their young, especially under stressful environmental conditions.</p>
-
-    <p>But Cleopatra never left the troop. She remained at the zoo, living among the same group of macaques&mdash;and as months passed, keepers began noticing something: she was watching Punch.</p>
-
-    <h2>The reunion: How it happened</h2>
-
-    <figure>
-        <img src="/chiba/punch-the-monkey-japan/72404/images/sitting-on-toy.jpg" alt="Punch sitting near his mother Cleopatra">
-        <figcaption>Punch at Ichikawa City Zoo (Photo: Daiei Onoguchi / CC BY-SA 4.0)</figcaption>
-    </figure>
-
-    <p>The reunion didn't happen overnight. Zoo staff began noticing Cleopatra showing increasing interest in Punch as he grew older and more independent. She would sit near him during feeding times, and on several occasions was spotted reaching out to touch him briefly before pulling away.</p>
-
-    <p>Keepers took a cautious approach, allowing the pair to interact naturally without forcing contact. Over the course of several weeks, Cleopatra's behavior shifted dramatically. She began grooming Punch&mdash;a key bonding behavior among macaques&mdash;and eventually allowed him to cling to her fur, something she had refused when he was a newborn.</p>
-
-    <p>The breakthrough moment came when Punch was observed sleeping curled up against Cleopatra, his stuffed orangutan toy still tucked under one arm. Staff described the scene as one of the most moving things they had ever witnessed at the zoo.</p>
-
-    <h2>What the experts say</h2>
-
-    <p>Animal behavior experts say that delayed maternal bonding, while rare, is not unheard of in primates. Stress, inexperience, and environmental factors can temporarily disrupt a mother's instincts, but the underlying bond can sometimes re-emerge once conditions improve.</p>
-
-    <p>In Punch's case, his growing confidence&mdash;partly thanks to the stuffed toy and the care of his keepers&mdash;may have made him less demanding and more approachable to Cleopatra. As he learned social cues from other macaques in the troop, he also became better at reading his mother's signals.</p>
-
-    <p>Experts caution that the relationship is still developing and may look different from a typical mother-infant bond, but the signs are overwhelmingly positive.</p>
-
-    <h2>What about the stuffed orangutan?</h2>
-
-    <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/2JA2C9CbDAA" title="Punch the monkey making friends, zoo reports" allowfullscreen></iframe>
+        <!-- Top Articles -->
+        <div class="sidebar-section">
+            <h3>Top Articles</h3>
+            <ul class="top-list">
+                <li class="top-item">
+                    <div class="top-rank">1</div>
+                    <img class="top-thumb" src="https://a1.cdn.japantravel.com/photo/72357-246529/180x120!/tokyo-shopping-in-ginza-matsuya-ginza-246529.jpg" alt="">
+                    <div>
+                        <div class="top-title">Shopping in Ginza: 10 Unexpected Finds at Matsuya Ginza</div>
+                        <div class="top-desc">Tokyo - Sponsored</div>
+                    </div>
+                </li>
+                <li class="top-item">
+                    <div class="top-rank">2</div>
+                    <img class="top-thumb" src="https://a1.cdn.japantravel.com/photo/72406-246824/180x120!/fukuoka-fukuoka-food-guide-yatai-culture-246824.jpg" alt="">
+                    <div>
+                        <div class="top-title">Ultimate Fukuoka Food Guide: Hakata Ramen & Yatai</div>
+                        <div class="top-desc">Fukuoka</div>
+                    </div>
+                </li>
+                <li class="top-item">
+                    <div class="top-rank">3</div>
+                    <img class="top-thumb" src="https://a0.cdn.japantravel.com/photo/72481-246877/180x120!/fukuoka-vegan-trip-fukuoka-246877.jpg" alt="">
+                    <div>
+                        <div class="top-title">Vegan Trip Fukuoka</div>
+                        <div class="top-desc">Fukuoka</div>
+                    </div>
+                </li>
+                <li class="top-item">
+                    <div class="top-rank">4</div>
+                    <img class="top-thumb" src="https://a1.cdn.japantravel.com/photo/72404-246815/180x120!/chiba-punch-the-monkey-japan-246815.jpg" alt="">
+                    <div>
+                        <div class="top-title">Punch's Reunited With His Birth Mother Cleopatra!</div>
+                        <div class="top-desc">Chiba</div>
+                    </div>
+                </li>
+                <li class="top-item">
+                    <div class="top-rank">5</div>
+                    <img class="top-thumb" src="https://a2.cdn.japantravel.com/photo/72476-246659/180x120!/shizuoka-izu-kogen-japan-s-most-dog-friendly-destination-246659.jpg" alt="">
+                    <div>
+                        <div class="top-title">Izu Kogen: Japan's Most Dog-Friendly Destination</div>
+                        <div class="top-desc">Shizuoka</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
+</div>
 
-    <p>Punch hasn't completely let go of his famous plush companion. While he now spends most of his time with Cleopatra and the troop, keepers say he still picks up the stuffed orangutan from time to time&mdash;especially during moments of stress or when the troop gets particularly active.</p>
-
-    <p>It's become a symbol of his journey: from rejected newborn clinging to a toy for comfort, to a confident young macaque reunited with the mother who left him behind.</p>
-
-    <h2>Where to see Punch and Cleopatra</h2>
-
-    <figure>
-        <img src="/chiba/punch-the-monkey-japan/72404/images/monkey-mountain.jpg" alt="Monkey Mountain at Ichikawa City Zoo">
-        <figcaption>Monkey Mountain at Ichikawa City Zoo (Photo: ike-yama / Shutterstock.com)</figcaption>
-    </figure>
-
-    <p>Punch and Cleopatra live at Ichikawa City Zoo, located in Ichikawa City in Chiba Prefecture, just across the Edo River from Tokyo. The zoo is a small community zoo known for its family-friendly atmosphere and for housing animals native to Japan, including Japanese macaques, red pandas, and various birds and small mammals.</p>
-
-    <p>From Tokyo, visitors can reach Ichikawa by local JR train lines in about 30&ndash;40 minutes. From the nearest station, buses or taxis provide access to the zoo.</p>
-
-    <h2>A story that came full circle</h2>
-
-    <figure>
-        <img src="/chiba/punch-the-monkey-japan/72404/images/cuddling-toy.jpg" alt="Punch cuddling his orangutan toy">
-        <figcaption>Punch with his beloved orangutan toy (Photo: Daiei Onoguchi / CC BY-SA 4.0)</figcaption>
-    </figure>
-
-    <p>Punch's story captivated the world because it touched something deeply human&mdash;the need for comfort, the pain of rejection, and the hope that things can get better. His reunion with Cleopatra is proof that sometimes, even in the animal kingdom, second chances happen.</p>
-
-    <p>Whether you followed Punch from the beginning or you're just hearing about him now, one thing is clear: the little monkey with the stuffed orangutan got his happy ending.</p>
-
-    <figure>
-        <img src="/chiba/punch-the-monkey-japan/72404/images/macaque-bridge.jpg" alt="Macaque at the zoo">
-        <figcaption>A macaque at Ichikawa City Zoo (Photo: Tan Yong Lin / Shutterstock.com)</figcaption>
-    </figure>
-
-    <div class="faq-section">
-        <h2>FAQs</h2>
-
-        <h3>Is Punch really back with his mother?</h3>
-        <p>Yes. Ichikawa City Zoo staff have confirmed that Punch's birth mother, Cleopatra, has begun accepting him back. She has been observed grooming him, letting him cling to her, and sleeping beside him.</p>
-
-        <h3>Who is Cleopatra?</h3>
-        <p>Cleopatra is Punch's birth mother, a Japanese macaque at Ichikawa City Zoo. She rejected Punch shortly after his birth in 2025, likely due to heat stress and first-time motherhood, but has since reconnected with him.</p>
-
-        <h3>Does Punch still carry his stuffed toy?</h3>
-        <p>Sometimes. While Punch now spends most of his time with Cleopatra and the troop, he still picks up his famous stuffed orangutan during moments of stress or high activity.</p>
-
-        <h3>How old is Punch?</h3>
-        <p>Punch was born in 2025, making him about seven to eight months old. He is a Japanese macaque, also known as a snow monkey.</p>
-
-        <h3>Can I visit Punch and Cleopatra?</h3>
-        <p>Yes. Ichikawa City Zoo is open to visitors. The zoo is located in Chiba Prefecture, about 30&ndash;40 minutes from central Tokyo by JR train. Animal viewing depends on weather and the zoo's daily schedule.</p>
-
-        <h3>Why did Cleopatra reject Punch in the first place?</h3>
-        <p>Zookeepers believe it was a combination of factors: Cleopatra was a first-time mother, Punch was born during an extreme heatwave, and the social dynamics of the captive troop added additional stress.</p>
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-col">
+            <h4>Destinations</h4>
+            <ul>
+                <li><a href="#">Tokyo</a></li>
+                <li><a href="#">Kyoto</a></li>
+                <li><a href="#">Osaka</a></li>
+                <li><a href="#">Hokkaido</a></li>
+                <li><a href="#">Okinawa</a></li>
+                <li><a href="#">Hiroshima</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Interests</h4>
+            <ul>
+                <li><a href="#">Food & Drink</a></li>
+                <li><a href="#">Culture</a></li>
+                <li><a href="#">Nature</a></li>
+                <li><a href="#">Shopping</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Activities</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Plan a Trip</h4>
+            <ul>
+                <li><a href="#">Japan Itineraries</a></li>
+                <li><a href="#">Custom Tours</a></li>
+                <li><a href="#">Package Tours</a></li>
+                <li><a href="#">Hotels</a></li>
+                <li><a href="#">JR Pass</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>About</h4>
+            <ul>
+                <li><a href="#">Our Agency</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
     </div>
-</article>
-
-<footer>
-    <p>Punch &amp; Cleopatra &mdash; Ichikawa City Zoo, Chiba, Japan</p>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Japan Travel K.K.</span>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <span><i class="fas fa-globe"></i> English</span>
+    </div>
 </footer>
 
 </body>
